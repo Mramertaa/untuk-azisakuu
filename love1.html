@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>For You azisa ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+.box {
+    background: rgba(255,255,255,0.15);
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 90%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+h1 { font-size: 2.6em; }
+p { font-size: 1.3em; min-height: 70px; }
+
+button {
+    margin-top: 15px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    background: #ff4d6d;
+    color: white;
+}
+
+button:hover { background: #ff1e4d; }
+
+.status {
+    margin-top: 10px;
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Untuk azisaa sayang❤️</h1>
+    <p id="text">Aku bikin ini khusus buat kamu…</p>
+
+    <button id="playBtn">▶ Sentuh untuk Putar Lagu</button>
+    <div class="status" id="status">Musik belum diputar</div>
+</div>
+
+<audio id="music" preload="auto">
+    <source src="fix-you.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("music");
+const statusText = document.getElementById("status");
+const playBtn = document.getElementById("playBtn");
+const textEl = document.getElementById("text");
+
+const messages = [
+    "Sejak aku kenal kamu…",
+    "ada hal yang berubah dalam hidupku",
+    "kamu datang tanpa rencana",
+    "tapi menetap tanpa diminta ❤️",
+    "kalau aku lelah, kamu adalah rumah",
+    "dan kalau aku tersesat…",
+    "aku harap kamu selalu di sana",
+    "tapi biarkanka buktikan kalauu bakalan ku perjuangkanki sampai kapanpun karena cintakuu abadi untuk kitaa azisa 💕",
+    "semoga hubungantaa bisa langgeng teruss selamanya yah sampai kakek nenekk",
+    "semoga apa yangg kita impikan berdua dari dulu bisa terwujud yah sayaangg",        
+    "mari kita berduaa bangun cintata hubungantaa kedepann menjadii lebih  bahkan jauh lebih baik dari hari- hari kemarin",  
+    "Ayo kita tumbuhh bersamaa terbang bersamaa gapaii apa yang di atass bersamaa",
+    "Semoga hubungantaa bukann hanya sampai ke pelaminan saja",
+    " tapi cinta dan hubunganta berdua abadi selamanyaa",
+    "Ohiyaa terakhir semangatt hadapi jalani proses menjadi dokter giginyaa semoga semuanya lancarr sayaa selalu doakannki dan dukungki apapun itu",
+    "Ehh lupaa serius ini yang terakhir ada sedikit puisi untuk kita hehehehe",
+    "kalau kata pak sapardi djoko judul puisinya adalah aku ingin mencintaimu dengan sederhana tapi kalau kataku judulnya aku ingin mencintaimu dengan segala ketulusankuu",
+    "Aku ingin mencintaimu dengan segala ketulusanku",
+    "Dengan kata yang tak sempat di ucapkan kayu kepada api yang menjadikannya abu",
+    "Aku ingin mencintaimu dengan segalaa ketulusanku",
+    "Dengan isyarat yang tak sempat di sampaikan awan kepadaa hujan yang menjadikannya tiada",
+    "hahaha sorry yah kalau freak sayaangg semogaa kitaa teruss bersamaaaa selamanyaa",
+    "membuat lebih banyak momen momen indahhh membuat beribu bahkan berjuta bermilliar2 kebahagiaan bersamaa",
+    "Apapun cobaan ke depannya i will fight untuk kita untuk hubungantaa so ",
+    "I LOVE YOU MORE THAN U LOVE ME CICHA SAYAANGGG❤️"
+];
+
+let i = 0, j = 0;
+
+function typeEffect() {
+    if (j < messages[i].length) {
+        textEl.innerHTML += messages[i][j++];
+        setTimeout(typeEffect, 55);
+    } else {
+        setTimeout(() => {
+            j = 0;
+            i++;
+            if (i < messages.length) {
+                textEl.innerHTML = "";
+                typeEffect();
+            }
+        }, 1200);
+    }
+}
+
+playBtn.addEventListener("click", () => {
+    music.volume = 0.7;
+    music.play().then(() => {
+        statusText.innerHTML = "🎶 Fix You sedang diputar";
+        playBtn.style.display = "none";
+        textEl.innerHTML = "";
+        i = 0; j = 0;
+        typeEffect();
+    }).catch(() => {
+        statusText.innerHTML = "⚠️ Sentuh layar SEKALI LAGI ya ❤️";
+    });
+});
+
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}, 300);
+https:/github.com/Mramertaa/untuk-cichaa.gi
+</script>
+
+</body>
+</html>
